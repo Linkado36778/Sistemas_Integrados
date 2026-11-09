@@ -19,7 +19,8 @@ router.post('/post', async (req, res) => {
 
 router.get('/getAll', async (req, res) => {
  try {
- const resultados = await modeloTarefa.find();
+ const string = "apiTarefasLucasBarbosa214636_ViniciusLopes213345"
+ const resultados = await modeloTarefa.find() + string;
  res.json(resultados)
  }
  catch (error) {
