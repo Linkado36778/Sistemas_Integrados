@@ -1,3 +1,3 @@
 export const environment = {
-  apiURL: 'https://lucas214636-vinicius213345.onrender.com'
+  apiURL: 'https://sistemas-integrados.onrender.com'
 };

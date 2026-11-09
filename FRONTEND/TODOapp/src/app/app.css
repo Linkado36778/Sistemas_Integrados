@@ -45,3 +45,10 @@ ul {
 ul li {
  list-style: none;
 }
+.rodape {
+ text-align: center;
+ margin-top: 2rem;
+ padding-bottom: 1rem;
+ font-size: 0.85rem;
+ color: #999;
+}

@@ -15,6 +15,7 @@ export class App {
   protected readonly title = signal('TODOapp');
 
   arrayDeTarefas = signal<Tarefa[]>([]);
+  identificador = signal('');
   apiURL: string;
 
   constructor(private http: HttpClient) {
@@ -28,8 +29,11 @@ export class App {
       resultado => { console.log(resultado); this.READ_tarefas(); });
   }
   READ_tarefas() {
-    this.http.get<Tarefa[]>(`${this.apiURL}/api/getAll`).subscribe(
-      resultado => this.arrayDeTarefas.set(resultado));
+    this.http.get<{ identificador: string; tarefas: Tarefa[] }>(`${this.apiURL}/api/getAll`).subscribe(
+      resultado => {
+        this.arrayDeTarefas.set(resultado.tarefas);
+        this.identificador.set(resultado.identificador);
+      });
  }
   DELETE_tarefa(tarefaAserRemovida: Tarefa) {
     var indice = this.arrayDeTarefas().indexOf(tarefaAserRemovida);
