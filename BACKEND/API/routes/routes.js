@@ -19,9 +19,8 @@ router.post('/post', async (req, res) => {
 
 router.get('/getAll', async (req, res) => {
  try {
- const identificador = "apiTarefasLucasBarbosa214636_ViniciusLopes213345"
  const resultados = await modeloTarefa.find();
- res.json({ identificador, tarefas: resultados })
+ res.json(resultados)
  }
  catch (error) {
  res.status(500).json({ message: error.message })

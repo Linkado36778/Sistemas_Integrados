@@ -28,8 +28,8 @@ export class App {
       resultado => { console.log(resultado); this.READ_tarefas(); });
   }
   READ_tarefas() {
-    this.http.get<{ identificador: string; tarefas: Tarefa[] }>(`${this.apiURL}/api/getAll`).subscribe(
-      resultado => this.arrayDeTarefas.set(resultado.tarefas));
+    this.http.get<Tarefa[]>(`${this.apiURL}/api/getAll`).subscribe(
+      resultado => this.arrayDeTarefas.set(resultado));
  }
   DELETE_tarefa(tarefaAserRemovida: Tarefa) {
     var indice = this.arrayDeTarefas().indexOf(tarefaAserRemovida);
