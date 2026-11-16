@@ -9,6 +9,7 @@
 
 <div class="main">
   <h1>Lucas Barbosa Pereira - 214636 / Vinicius Pereira Lopes - 213345</h1>
+  <div *ngIf="usuarioLogado()">
     <input class="lg-text-input" #campoNovoItem (keyup.enter)="CREATE_tarefa(campoNovoItem.value); campoNovoItem.value=''">
     <button class="btn-primary" (click)="CREATE_tarefa(campoNovoItem.value); campoNovoItem.value=''">Adicionar Tarefa</button>
     
@@ -19,10 +20,17 @@
         </li>
         }
     </ul>
-</div>
-
+  </div>
+  <!-- Modificar depois para usar o tokenJWT -->
+  <!-- <div *ngIf="!usuarioLogado()">
+    <input #username placeholder="nome" class="lg-text-input" />
+    <BR>
+    <input #password placeholder="senha" class="lg-text-input" />
+    <button class="btn-primary" (click)="login(username.value, password.value)">Login</button>
+  </div> -->
+<!-- 
 <footer class="rodape">{{ identificador() }}</footer>
-
+</div> -->
 <!-- <style>
   :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
