@@ -7,7 +7,7 @@ app.use((req, res, next) => {
  res.header(
  "Access-Control-Allow-Headers",
  //Modificar para usar o tokenJWT
- //"Origin, X-Requested-With, Content-Type, Accept, id-token"
+ "Origin, X-Requested-With, Content-Type, Accept, id-token"
  );
  next();
 });
