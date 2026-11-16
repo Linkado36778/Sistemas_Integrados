@@ -9,7 +9,8 @@
 
 <div class="main">
   <h1>Lucas Barbosa Pereira - 214636 / Vinicius Pereira Lopes - 213345</h1>
-  <div *ngIf="usuarioLogado()">
+  <!-- <div *ngIf="usuarioLogado()"> -->
+  <div>
     <input class="lg-text-input" #campoNovoItem (keyup.enter)="CREATE_tarefa(campoNovoItem.value); campoNovoItem.value=''">
     <button class="btn-primary" (click)="CREATE_tarefa(campoNovoItem.value); campoNovoItem.value=''">Adicionar Tarefa</button>
     
