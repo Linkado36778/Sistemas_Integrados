@@ -38,7 +38,23 @@ router.delete('/delete/:id', verificaJWT, async (req, res, next) => {
  }
 })
 
-router.patch('/update/:id', verificaJWT, async (req, res, next) => {
+//Modificar depois para usar o tokenJWT
+// router.patch('/update/:id', verificaJWT, async (req, res, next) => {
+//  try {
+//  const id = req.params.id;
+//  const novaTarefa = req.body;
+//  const options = { new: true };
+//  const result = await modeloTarefa.findByIdAndUpdate(
+//  id, novaTarefa, options
+//  )
+//  res.json(result)
+//  }
+//  catch (error) {
+//  res.status(400).json({ message: error.message })
+//  }
+// })
+
+router.patch('/update/:id', async (req, res, next) => {
  try {
  const id = req.params.id;
  const novaTarefa = req.body;
